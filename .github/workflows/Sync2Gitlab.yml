@@ -2,7 +2,7 @@ name: Auto Sync to GitLab
 
 on:
   push: 
-    branches: [ master ]
+    branches: [ main ]
   schedule: 
     - cron: '0 1 * * *'
 
