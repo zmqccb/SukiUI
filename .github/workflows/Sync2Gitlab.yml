@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 禁用浅克隆
       - name: Configure Git
         run: |
           git config --global user.name "GitHub Sync Bot"
@@ -19,4 +21,4 @@ jobs:
       - name: Push to GitLab
         run: |
           git remote add gitlab http://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@firestones.org:8069/onapc/SukiUI.git
-          git push --force gitlab main
+          git push gitlab main
