@@ -19,5 +19,4 @@ jobs:
       - name: Push to GitLab
         run: |
           git remote add gitlab http://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@firestones.org:8069/onapc/SukiUI.git
-          git filter-branch -- --all
           git push --force gitlab main
